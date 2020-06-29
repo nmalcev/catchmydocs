@@ -1,0 +1,44 @@
+.Rte_wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    --main-offset: 5px;
+}
+.Rte_header,
+.Rte_footer {
+    flex: 0 1 60px;
+}
+.Rte_main {
+    position: relative;
+    flex: 1 1 auto;
+    border: 1px solid #cecece;
+    overflow-y: auto;
+}
+
+
+.Rte_textbox {
+    display: inline-block;
+    display: flow-root;
+    position: absolute;
+    left: var(--main-offset);
+    top: var(--main-offset);
+    right: var(--main-offset);
+    bottom: var(--main-offset);
+    overflow: auto;
+    outline: 1px solid #777;
+    outline-offset: 2px;
+}
+.Rte_textbox {
+    display: inline-block;
+    display: flow-root;
+}
+
+.combo-button {
+    border: none;
+}
+
+.combo-button > .CheckBox_input:checked + img,
+.combo-button > .CheckBox_input:checked + span {
+    border: 1px solid red;
+}

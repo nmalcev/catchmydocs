@@ -1,0 +1,83 @@
+.Rte_wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    --main-offset: 5px;
+    --active-color: #4f82f5;
+    --regular-color: #cfcfcf;
+}
+.Rte_header,
+.Rte_footer {
+    flex: 0 1 60px;
+}
+.Rte_main {
+    position: relative;
+    flex: 1 1 auto;
+    border: 1px solid #cecece;
+}
+
+.Rte_header > * {
+	margin: 0 6px 3px 0;
+	vertical-align: middle;
+}
+
+.Rte__selectbox {
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-top: none;
+	border-left: none;
+	border-right: none; 
+	background: #fff;
+	outline: none;
+}
+.Rte__selectbox:focus,
+.Rte__selectbox:active {
+	border-color: var(--active-color);
+}
+
+
+.Rte_textbox {
+    display: inline-block;
+    display: flow-root;
+    position: absolute;
+    left: var(--main-offset);
+    top: var(--main-offset);
+    right: var(--main-offset);
+    bottom: var(--main-offset);
+    overflow: auto;
+    outline: 1px solid #777;
+    outline-offset: 2px;
+}
+.Rte_textbox {
+    display: inline-block;
+    display: flow-root;
+}
+
+.regular-btn {
+	
+}
+
+/* toggle-btn*/
+.toggle-btn {
+    border: none;
+}
+
+.toggle-btn > .CheckBox_input:checked + .toggle-btn__content {
+    border: 1px solid red;
+}
+.toggle-btn > .CheckBox_input + .toggle-btn__icon {
+	width: 24px;
+	height:24px;
+	border-radius: 50%;
+	border: 2px solid var(--regular-color);
+}
+.toggle-btn > .CheckBox_input:checked + .toggle-btn__icon {
+	border-color: var(--active-color);
+}
+.toggle-btn > .CheckBox_input:focus + .toggle-btn__icon,
+.toggle-btn:hover > .CheckBox_input:focus + .toggle-btn__icon {
+	border-color: blue;
+}
+
+

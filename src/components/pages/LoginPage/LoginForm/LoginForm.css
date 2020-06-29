@@ -1,0 +1,16 @@
+.LoginForm_title {
+    text-align: center;
+}
+.LoginForm {
+    margin: 0 0 1rem 0;
+    padding: 2rem;
+    background: #fff;
+}
+.LoginForm .Field_label {
+    display: block;
+}
+
+.LoginForm input {
+    width: 100%;
+    box-sizing: border-box;
+}
