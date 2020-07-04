@@ -26,7 +26,7 @@ export const logout = () => ({
 });
 
 export const auth = (email, password, isSignUp = false, history) => {
-    return (dispatch, getState) => {
+    return (dispatch/*, getState*/) => {
         dispatch(authStart());
         const authData = {
             email: email,
@@ -35,21 +35,26 @@ export const auth = (email, password, isSignUp = false, history) => {
         };
         const url = `/${isSignUp ? 'signupNewUser' : 'verifyPassword'}?key=${FIREBASE_KEY}`;
         
-        firebaseIdentity.post(url, authData)
-            .then(response => {
+        firebaseIdentity.
+            post(url, authData).
+            then(response => {
                 const {data} = response;
                 dispatch(authSuccess(data.idToken, data.localId, data.email, data.kind, data.refreshToken, history));
                 history.push('/');
-            })
-            .catch(err => {
+            }).
+            catch(err => {
                 if (!isSignUp && err.response.data) {
                     let {error} = err.response.data;
 
                     let isEmailInvalid = error.errors.find(errorObj => errorObj.message === 'INVALID_EMAIL');
+                    // eslint-disable-next-line no-console
                     console.warn('Authorization failed! isEmailInvalid: %s', isEmailInvalid);
+                    // eslint-disable-next-line no-console
                     console.dir(error);
                 } else {
+                    // eslint-disable-next-line no-console
                     console.warn('SignUp error:');
+                    // eslint-disable-next-line no-console
                     console.dir(err);
                 }
                 dispatch(authFail(err));
@@ -77,20 +82,24 @@ export const recheckAuthorization = () => {
             const {users} = resp.data;
             const userData = users.find(data => data.email === sessionState.userEmail);
             
-            if (userData && +(new Date(userData.lastRefreshAt)) + 3600 * 1000 > Date.now()) {
+            if (
+                userData &&
+                new Date(userData.lastRefreshAt) + 3600 * 1000 > Date.now()
+            ) {
                 dispatch({
                     type: actions.AUTH_RECHECKED,
                 });
             } else {
-                throw('The token is expired');
+                throw 'The token is expired';
             }
         }).catch(err => {
+            // eslint-disable-next-line no-console
             console.warn('Check error');
+            // eslint-disable-next-line no-console
             console.dir(err);
             dispatch({
                 type: actions.AUTH_RECHECKED,
             });
-            // 
         });    
     }
 }

@@ -4,10 +4,13 @@ module.exports = (env) => {
 	const assetsPath = path.resolve(__dirname, 'dist/assets');
 	return {
 		mode: 'production', // We want to build a production ready build
-		entry: path.resolve(__dirname, `src/index.js`),
+		entry: {
+			index: path.resolve(__dirname, 'src/index.js')
+		},
 		output: {
 			path: assetsPath,
-			filename: 'bundle.js'
+			publicPath: '/assets/',
+			filename: '[name].bundle.js' // in the file system
 		},
 		devtool: '#source-map',
 		module: {
