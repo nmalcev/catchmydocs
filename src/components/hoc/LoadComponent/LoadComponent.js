@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 
 const loadComponent = (importCallback, fallback) => () => {
     const Component = React.lazy(importCallback);

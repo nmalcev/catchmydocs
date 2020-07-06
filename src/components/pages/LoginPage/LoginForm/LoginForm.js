@@ -82,14 +82,20 @@ class LoginForm extends Component {
             <form className="LoginForm" onSubmit={this.onSubmitHandler} ref="form">
                 {this.state.fields.map((fieldConfig, i) => {
                     return (
-                        <Field key={i} {...fieldConfig}/>
+                        <div className="LoginForm__row" key={i}>
+                            <Field   {...fieldConfig}/>
+                        </div>
                     )
                 })}
-                <div>
-                    <button type="submit" disabled={this.props.isAuthorizing}>{this.state.isSignup ? 'Signup' : 'Login'}</button>
+                <div className="LoginForm__row">
+                    <button 
+                        className="btn btn_secondary" 
+                        type="submit" 
+                        disabled={this.props.isAuthorizing}
+                    >{this.state.isSignup ? 'Signup' : 'Login'}</button>
                 </div>
-                <div>
-                    <span>{this.state.isSignup ? 'Already have an account?' : 'No account yet?'}</span>
+                <div className="LoginForm__row">
+                    <span>{this.state.isSignup ? 'Already have an account?' : 'No account yet?'}</span>&nbsp;
                     <button className="btnlink" onClick={this.onSwitchSignMode}>{this.state.isSignup ? 'Switch to login' : 'Signup here'}</button>
                 </div>
             </form>

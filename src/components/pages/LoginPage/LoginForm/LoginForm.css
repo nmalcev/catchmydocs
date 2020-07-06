@@ -1,11 +1,18 @@
 .LoginForm_title {
     text-align: center;
+    color: #fff;
 }
 .LoginForm {
     margin: 0 0 1rem 0;
     padding: 2rem;
     background: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5) inset;
+    border-radius: 2px;
 }
+.LoginForm__row {
+    margin: 0 0 0.75rem 0;
+}
+
 .LoginForm .Field_label {
     display: block;
 }

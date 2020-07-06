@@ -14,12 +14,13 @@ const mapStateToProps = state => {
         isAuthorized: !!state.session.userId,
     }
 };
+const LoginPageURL = '/login';
 
 class App extends Component {
     render() {
         return (
             <Switch>
-                <Route path="/auth" component={LoginPage} exact/>
+                <Route path={LoginPageURL} component={LoginPage} exact/>
                 {this.props.isAuthorized ? [
                     <Route key="1" path="/settings" component={PrivatePage} exact/>,
                     <Route key="2" path="/document" render={loadComponent(
@@ -31,9 +32,9 @@ class App extends Component {
                         <h3>Loading...</h3>
                     )}/>
                 ] : [
-                    <Redirect key="4" from="/settings" to="/auth"/>,
-                    <Redirect key="5" from="/document" to="/auth"/>,
-                    <Redirect key="6" from="/documenttest" to="/auth"/>
+                    <Redirect key="4" from="/settings" to={LoginPageURL}/>,
+                    <Redirect key="5" from="/document" to={LoginPageURL}/>,
+                    <Redirect key="6" from="/documenttest" to={LoginPageURL}/>
                 ]}
                 <Route path="/" component={IndexPage} exact />
                 <Redirect from="/dashboard" to="/settings"/>

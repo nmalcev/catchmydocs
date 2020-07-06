@@ -3,6 +3,8 @@
     height: 100vh;
     text-align: center;
     background: #F1F4FF;
+    // background-image: linear-gradient(260deg, rgb(0, 45, 161), rgb(2, 108, 223) 55%, rgb(0, 45, 161));
+    background-image: linear-gradient(105deg,#2489e4,#234fae 1%,#49c0f0);
 }
 .LoginPage:before {
     content: "";
@@ -26,9 +28,15 @@
     padding: 0;
     width: 100%;
     text-align: center;
-}
-.LoginForm_links > li {
-    display: inline-block;
-    margin: 0 0.5rem 0 0;
-    padding: 0;
+    & > li {
+        display: inline-block;
+        margin: 0 0.5rem 0 0;
+        padding: 0;
+    }
+    & a {
+        color: #fff;
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }

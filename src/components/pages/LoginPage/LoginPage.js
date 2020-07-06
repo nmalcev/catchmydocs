@@ -3,7 +3,7 @@ import LoginForm from './LoginForm/LoginForm';
 import {connect} from 'react-redux';
 
 import {logout} from '../../../store/actions/auth';
-import './LoginPage.css';
+import './LoginPage.scss';
 
 const mapStateToProps = state => {
     return {
@@ -26,7 +26,7 @@ class LoginPage extends Component {
             <div className="LoginPage">
                 {this.props.isAuthorized ?
                     <div className="LoginPage_wrap">
-                        <button onClick={this.onLogoutHandler}>Log out</button>
+                        <button className="btn" onClick={this.onLogoutHandler}>Log out</button>
                     </div>
                     : 
                     <div className="LoginPage_wrap">

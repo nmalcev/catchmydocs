@@ -88,33 +88,33 @@ class RTE extends Component {
             <List component="option" items={SelectArticleItems}/>
           </select>
           <select 
-			className="Rte__selectbox"
+			      className="Rte__selectbox"
           	value={this.state.color} 
           	onChange={this.sonChangeColorHandler}>
             <List component="option" items={SelectColorItems}/>
           </select>
           <select 
-			className="Rte__selectbox"
+			      className="Rte__selectbox"
           	value={this.state.fontFamily} 
           	onChange={this.onChangeFontHandler}>
             <List component="option" items={SelectFontItems}/>
           </select>
           <select 
-			className="Rte__selectbox"
+			      className="Rte__selectbox"
           	value={this.state.fontSize} 
           	onChange={this.onChangeFontSizeHandler}>
             <List component="option" items={SelectFontSizeItems}/>
           </select>
           <select 
-			className="Rte__selectbox"
+			      className="Rte__selectbox"
           	value={this.state.textAlign} 
           	onChange={this.onChangeAlignHandler}>
             <List component="option" items={SelectAlignItems}/>
           </select>
           <select
-			 className="Rte__selectbox"
-          	 value={this.state.backgroundColor} 
-          	 onChange={this.onChangeBackgroundHandler}>
+			      className="Rte__selectbox"
+          	value={this.state.backgroundColor} 
+            onChange={this.onChangeBackgroundHandler}>
             <List component="option" items={SelectBackgroundItems}/>
           </select>
           <button onClick={e => this.ctrl.removeFormat()}>Clean</button>
@@ -149,16 +149,17 @@ class RTE extends Component {
             <span className="toggle-btn__content">THR</span>
           </CheckBox>
           <button onClick={e => this.ctrl.indent(this.state.tagName)}>
-			<img src="data:image/gif;base64,R0lGODlhFgAWAOMIAAAAADljwl9vj1iE35GjuaezxtDV3NHa7P///////////////////////////////yH5BAEAAAgALAAAAAAWABYAAAQ7EMlJq704650B/x8gemMpgugwHJNZXodKsO5oqUOgo5KhBwWESyMQsCRDHu9VOyk5TM9zSpFSr9gsJwIAOw==" />
+			      <img src="data:image/gif;base64,R0lGODlhFgAWAOMIAAAAADljwl9vj1iE35GjuaezxtDV3NHa7P///////////////////////////////yH5BAEAAAgALAAAAAAWABYAAAQ7EMlJq704650B/x8gemMpgugwHJNZXodKsO5oqUOgo5KhBwWESyMQsCRDHu9VOyk5TM9zSpFSr9gsJwIAOw==" />
           </button>
           <button onClick={e => this.ctrl.outdent(this.state.tagName)}>
-			<img src="data:image/gif;base64,R0lGODlhFgAWAMIHAAAAADljwliE35GjuaezxtDV3NHa7P///yH5BAEAAAcALAAAAAAWABYAAAM2eLrc/jDKCQG9F2i7u8agQgyK1z2EIBil+TWqEMxhMczsYVJ3e4ahk+sFnAgtxSQDqWw6n5cEADs=" />
+			      <img src="data:image/gif;base64,R0lGODlhFgAWAMIHAAAAADljwliE35GjuaezxtDV3NHa7P///yH5BAEAAAcALAAAAAAWABYAAAM2eLrc/jDKCQG9F2i7u8agQgyK1z2EIBil+TWqEMxhMczsYVJ3e4ahk+sFnAgtxSQDqWw6n5cEADs=" />
           </button>
-          {/* 
-               <img class="intLink" title="Numbered list" onclick="formatDoc('insertorderedlist');" src="data:image/gif;base64,R0lGODlhFgAWAMIGAAAAADljwliE35GjuaezxtHa7P///////yH5BAEAAAcALAAAAAAWABYAAAM2eLrc/jDKSespwjoRFvggCBUBoTFBeq6QIAysQnRHaEOzyaZ07Lu9lUBnC0UGQU1K52s6n5oEADs=" />
-      <img class="intLink" title="Dotted list" onclick="formatDoc('insertunorderedlist');" src="data:image/gif;base64,R0lGODlhFgAWAMIGAAAAAB1ChF9vj1iE33mOrqezxv///////yH5BAEAAAcALAAAAAAWABYAAAMyeLrc/jDKSesppNhGRlBAKIZRERBbqm6YtnbfMY7lud64UwiuKnigGQliQuWOyKQykgAAOw==" />
- 
-       */}
+          <button onClick={e => this.ctrl.toggleOrderedList()}>
+            <img src="data:image/gif;base64,R0lGODlhFgAWAMIGAAAAADljwliE35GjuaezxtHa7P///////yH5BAEAAAcALAAAAAAWABYAAAM2eLrc/jDKSespwjoRFvggCBUBoTFBeq6QIAysQnRHaEOzyaZ07Lu9lUBnC0UGQU1K52s6n5oEADs=" />
+			    </button>
+          <button onClick={e => this.ctrl.toggleUnorderedList()}>
+            <img src="data:image/gif;base64,R0lGODlhFgAWAMIGAAAAAB1ChF9vj1iE33mOrqezxv///////yH5BAEAAAcALAAAAAAWABYAAAMyeLrc/jDKSesppNhGRlBAKIZRERBbqm6YtnbfMY7lud64UwiuKnigGQliQuWOyKQykgAAOw==" />
+			    </button>
         </header>
         <iframe className="Rte_main" ref={this.textBox}></iframe>
         <footer className="Rte_footer">

@@ -133,7 +133,7 @@ export default class Controller {
     }
 
     toggleUnorderedList(){
-        this.#doc.execCommand('insertUoOrderedList', false, null);
+        this.#doc.execCommand('insertUnOrderedList', false, null);
     }
 }
 
